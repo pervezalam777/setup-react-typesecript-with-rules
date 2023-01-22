@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
 	const str:string  = 'working'
-  str  = 'new value'
+  str  = 'new value'  
 	console.log('value..', str)
 	const arr = [2, '4', true]
 	arr[0] = 'new value'
