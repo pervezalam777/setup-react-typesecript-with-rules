@@ -22,8 +22,14 @@
     "check:types": "tsc --noemit",
     "es:lint": "eslint .",
     "lint": "npm run check:types && npm run es:lint",
+    "lint:fix": "eslint . -- --fix",
     "format": "prettier --write src/**/*.*",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.ts": "npm run format && npm run check:types && npm run lint:fix",
+    "**/*.tsx": "npm run format && npm run check:types && npm run lint:fix"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +53,8 @@
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "eslint": "^8.32.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "prettier": "2.8.3",
     "typescript": "^4.9.4"
   }

@@ -51,3 +51,22 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Lint setup
 - [typescript eslint](https://typescript-eslint.io/getting-started) : setup 
 - [.editorconfig](https://prettier.io/docs/en/configuration.html): editor configuration
+- [husky setup](https://prettier.io/docs/en/install.html) : prettier documentation for husky setup
+
+### husky setup
+1. Install husky and lint-staged:
+```console
+npm install --save-dev husky lint-staged
+npx husky install
+npm pkg set scripts.prepare="husky install"
+npx husky add .husky/pre-commit "npx lint-staged"
+```
+
+2. Add the following to your package.json:
+```console
+{
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
+```
