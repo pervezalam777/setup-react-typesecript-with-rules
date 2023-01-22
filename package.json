@@ -28,9 +28,6 @@
     "prepare": "husky install",
     "precommit": "npm run format && npm run check:types && npm run lint:fix"
   },
-  "lint-staged": {
-    "**/*.*": "npm run precommit"
-  },
   "eslintConfig": {
     "extends": [
       "react-app",

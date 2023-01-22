@@ -59,14 +59,15 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 npm install --save-dev husky lint-staged
 npx husky install
 npm pkg set scripts.prepare="husky install"
-npx husky add .husky/pre-commit "npx lint-staged"
+npx husky add .husky/pre-commit "npm run precommit"
 ```
 
 2. Add the following to your package.json:
 ```console
 {
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+  "script": {
+    
+    "precommit": "npm run format && npm run check:types && npm run lint:fix"
   }
 }
 ```
