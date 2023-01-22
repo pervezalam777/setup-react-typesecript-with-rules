@@ -3,7 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 
 function App() {
-	const str = 'working'
+	const str:string  = 'working'
 	console.log('value..', str)
 	const arr = [2, '4', true]
 	arr[0] = 'new value'

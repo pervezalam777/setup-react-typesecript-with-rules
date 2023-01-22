@@ -23,13 +23,18 @@
     "es:lint": "eslint .",
     "lint": "npm run check:types && npm run es:lint",
     "lint:fix": "eslint . -- --fix",
-    "format": "prettier --write src/**/*.*",
+    "format": "prettier \"src/**/*.(tsx|ts|css|scss|json)\" --write",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "precommit": "npm run format && npm run lint:fix && git add -A ."
   },
-  "lint-staged": {
-    "**/*.ts": "npm run format && npm run check:types && npm run lint:fix",
-    "**/*.tsx": "npm run format && npm run check:types && npm run lint:fix"
+  "husky": {
+    "hooks": {
+      "pre-commit":"lint-staged"
+    }
+  },
+  "lint-staged":{
+    "*.--write":"npm run precommit"
   },
   "eslintConfig": {
     "extends": [
