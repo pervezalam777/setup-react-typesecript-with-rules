@@ -1,14 +1,13 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-	const str:string  = 'working'
-  str  = 'new value'  
-	console.log('value..', str)
-	const arr = [2, '4', true]
-	arr[0] = 'new value'
-	console.log(arr)
+	const str = 'working';
+	console.log('value..', str);
+	const arr = [2, '4', true];
+	arr[0] = 'new value';
+	console.log(arr);
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -26,7 +25,7 @@ function App() {
 				</a>
 			</header>
 		</div>
-	)
+	);
 }
 
-export default App
+export default App;

@@ -19,20 +19,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "check:types": "tsc --noemit",
+    "check:types": "tsc --noemit --project tsconfig.json",
     "es:lint": "eslint .",
     "lint": "npm run check:types && npm run es:lint",
-    "lint:fix": "eslint . -- --fix",
+    "lint:fix": "eslint . --fix",
     "format": "prettier \"src/**/*.(ts|tsx|css|scss|json)\" --write ",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "precommit": "npm run format && npm run check:types && npm run lint:fix"
   },
   "lint-staged": {
-    "**/*.[ts|tsx|css|scss|json]": [
-      "npm run format",
-      "npm run check:types",
-      "npm run lint:fix"
-    ]
+    "**/*.*": "npm run precommit"
   },
   "eslintConfig": {
     "extends": [
