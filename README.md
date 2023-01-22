@@ -50,3 +50,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Lint setup
 - [typescript eslint](https://typescript-eslint.io/getting-started) : setup 
+- [.editorconfig](https://prettier.io/docs/en/configuration.html): editor configuration

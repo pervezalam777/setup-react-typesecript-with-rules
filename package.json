@@ -20,8 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "check:types": "tsc --noemit",
-    "es:lint":"eslint .",
+    "es:lint": "eslint .",
     "lint": "npm run check:types && npm run es:lint",
+    "format": "prettier --write src/**/*.*",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,6 +47,7 @@
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "eslint": "^8.32.0",
+    "prettier": "2.8.3",
     "typescript": "^4.9.4"
   }
 }
